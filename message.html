@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>message</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="message.css">
+</head>
+<body>
+  <div class="card">
+<div id="message" class="message">
+    <h2> رفيقتي الغالية،</h2>
+           
+
+            <img src="1 (2).jpeg" alt="ذكرياتنا 1">
+            <p> بحب قلك شكراً من قلبي لأنك وقفت معي بكل حالاتي بالحلوة والمرة بالقوة والضعف دايما كنت سندي وكتفي اللي
+            برتاح عليه</p>
+           
+
+            <img src="2 (2).jpeg" alt="ذكرياتنا 2">
+            <p> أنت الصديقة الحقيقية والأخت اللي ما بتتعوض والنعمة اللي ما ببدلها بحدا بالدني وبحبك كمان وهالرسالة مش
+            بس بعيد الحب كل يوم رح قلك هيك 💜
+</p>
+           
+            <img src="3 (2).jpeg" alt="ذكرياتنا 3">
+            <p> وأكتر شي تعلمته بحياتي هو كيف أكون قوية وبرمج اي مشكلة واتخطاها…
+             بس بلاكي كان كل هالشي أصعب
+
+            وجودك جنبي خلّاني اعرف كيف واجه كل شي وانت السبب اللي خلاني اصير اقوى 💜</p>
+           
+        </div>
+    </div>
+
+  <script>
+    const msg = document.getElementById('message');
+    const elements = Array.from(msg.children);
+    let i = 0;
+
+    function revealNext() {
+      if(i >= elements.length) return;
+      elements[i].style.display = 'block';
+      elements[i].style.opacity = 0;
+      elements[i].style.transform = 'translateY(15px)';
+      elements[i].style.transition = 'opacity 1s ease, transform 1s ease';
+      setTimeout(() => {
+        elements[i].style.opacity = 1;
+        elements[i].style.transform = 'translateY(0)';
+        i++;
+        setTimeout(revealNext, 600);
+      }, 50);
+    }
+
+    window.addEventListener('load', revealNext);
+  </script>
+</body>
+</html>
